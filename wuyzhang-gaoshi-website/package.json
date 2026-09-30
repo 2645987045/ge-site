@@ -1,0 +1,17 @@
+{
+  "name": "wuyzhang-gaoshi-website",
+  "version": "1.0.0",
+  "description": "《吴玉章在高师》话剧官方网站",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": ["话剧", "吴玉章", "演出"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

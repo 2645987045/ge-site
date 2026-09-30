@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>影像 - 吴玉章在高师</title>
+  <meta name="description" content="《吴玉章在高师》话剧影像中心 —— 宣传片、预告片、排练花絮与演出实录。">
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <link rel="stylesheet" href="/src/styles/videos.css">
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar scrolled">
+    <div class="nav-container">
+      <a href="./index.html" class="nav-logo" aria-label="吴玉章在高师 首页">
+        <span class="logo-seal" aria-hidden="true"></span>
+        <span class="logo-text">吴玉章在高师</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="./index.html" class="nav-link">首页</a></li>
+        <li><a href="./videos.html" class="nav-link active">影像</a></li>
+        <li><a href="./characters.html" class="nav-link">角色</a></li>
+        <li><a href="./behind.html" class="nav-link">幕后</a></li>
+        <li><a href="./about.html" class="nav-link">关于</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="打开菜单"><span class="hamburger"></span></button>
+    </div>
+  </nav>
+
+  <!-- 页首 -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="kicker">VIDEOS · 影像</p>
+      <h1 class="page-title">影像中心</h1>
+      <p class="page-subtitle">宣传片、预告片、排练花絮与演出实录</p>
+    </div>
+  </section>
+
+  <!-- 视频内容 -->
+  <section class="videos-section">
+    <div class="container">
+      <div class="featured reveal" id="featuredWrap">
+        <div class="media-frame frame-16x9 featured-frame" id="featuredMedia">
+          <div class="ph" aria-hidden="true">
+            <span class="ph-glyph">影</span>
+            <span class="ph-label">Video Coming Soon</span>
+          </div>
+        </div>
+        <div class="featured-meta">
+          <h2 id="featuredTitle"></h2>
+          <span class="tag" id="featuredTag"></span>
+        </div>
+        <p class="featured-desc" id="featuredDesc"></p>
+      </div>
+
+      <div class="video-grid reveal" id="videoGrid">
+        <!-- 视频卡片由脚本渲染 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <h3>吴玉章在高师</h3>
+          <p>四川大学吴玉章学院出品话剧</p>
+        </div>
+        <div class="footer-col">
+          <h4>导航</h4>
+          <div class="footer-links">
+            <a href="./characters.html">角色档案</a>
+            <a href="./behind.html">幕后花絮</a>
+            <a href="./about.html">关于我们</a>
+          </div>
+        </div>
+        <div class="footer-col footer-contact">
+          <h4>主办承办</h4>
+          <p>主办单位：四川大学</p>
+          <p>承办单位：教务处 · 党委学生工作部（处） · 吴玉章学院</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 四川大学吴玉章学院 · All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/scripts/main.js"></script>
+  <script type="module" src="/src/scripts/videos.js"></script>
+</body>
+</html>
