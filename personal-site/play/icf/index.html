@@ -209,11 +209,21 @@ body.cinema .cinema-exit{display:block}
 
 <script>
 const cv = document.getElementById('stage'), ctx = cv.getContext('2d');
-const W = cv.width, H = cv.height, CX = W/2, CY = H/2;
+const W = 720, H = 460, CX = W/2, CY = H/2;
+let RS = 1;
+function fitCanvas(){
+  const rect = cv.getBoundingClientRect();
+  const dpr = window.devicePixelRatio || 1;
+  const q = Math.min(3, Math.max(1, (rect.height || 460) / 460 * dpr));
+  RS = q;
+  cv.width = Math.round(W * q);
+  cv.height = Math.round(H * q);
+}
 const cap = document.getElementById('cap'), banner = document.getElementById('banner');
 const P = { E: 2, tau: 10, R: 1.0 };
 let run = null, particles = null, outcomeShown = false;
 const TITLE = 1.2;
+let hudOn = true, capOn = true, demoScale = 0.62;
 function qStr(q){ return q > 99 ? '>99' : fmt(q); }
 
 function compute(p) {
@@ -269,7 +279,7 @@ const CAPS = [
 ];
 
 function startRun(demo) {
-  run = { t0: performance.now(), scale: demo ? 0.62 : 1, demo: demo, res: refresh() };
+  run = { t0: performance.now(), scale: demo ? demoScale : 1, demo: demo, res: refresh() };
   particles = null; outcomeShown = false;
   banner.className = ''; banner.textContent = '';
   cap.classList.toggle('on', demo);
@@ -309,6 +319,7 @@ renderChals(JSON.parse(localStorage.getItem('pp_icf_ch') || '{}'));
 function easeIn(u) { return u*u*u; }
 
 function draw(now) {
+  ctx.setTransform(RS, 0, 0, RS, 0, 0);
   ctx.clearRect(0, 0, W, H);
   ctx.fillStyle = '#050810'; ctx.fillRect(0, 0, W, H);
   ctx.strokeStyle = 'rgba(29,42,68,.5)'; ctx.lineWidth = 1;
@@ -336,7 +347,7 @@ function draw(now) {
       }
       if (phase === 3) shellR = Rpx / Math.min(6, Math.max(2, Math.sqrt(res.C)));
     }
-    if (run.demo) {
+    if (run.demo && capOn) {
       cap.textContent = phase === -2 ? '' : phase === 0 ? CAPS[0] : phase === 1 ? CAPS[1] : phase === 2 ? CAPS[2] :
         (res.ignite ? '约 ' + Math.round(res.T*1.16) + ' 千万℃——十亿分之一秒内，一颗星在实验室诞生' : '这次没点着。调调旋钮，再试一次');
     }
@@ -431,7 +442,7 @@ function draw(now) {
     ctx.fillText('调好参数，按「发射」——或点「演示」看一次完整点火', CX, H - 26);
   }
 
-  if (run && run.demo) {
+  if (run && run.demo && hudOn) {
     ctx.fillStyle = 'rgba(143,163,200,.9)'; ctx.font = '13px sans-serif'; ctx.textAlign = 'left';
     ctx.fillText('E ' + fmt(P.E) + ' MJ · 脉冲 ' + fmt(P.tau) + ' ns · 靶丸 ' + fmt(P.R,2) + ' mm', 16, 24);
     const total = TITLE + 3.5 + 3.2;
@@ -459,11 +470,43 @@ function refreshQuiet() { if (!quietCache) quietCache = compute(P); return quiet
 ['sE','sT','sR'].forEach((id) => document.getElementById(id).addEventListener('input', () => { quietCache = null; }));
 
 refresh();
-function enterCinema(){ document.body.classList.add('cinema'); setParams(2.0, 10, 1.05); startRun(true); }
+function enterCinema(){ document.body.classList.add('cinema'); setParams(2.0, 10, 1.05); startRun(true); requestAnimationFrame(fitCanvas); }
 document.getElementById('cinema').onclick = enterCinema;
-document.getElementById('cinemaExit').onclick = function(){ document.body.classList.remove('cinema'); run = null; banner.className = ''; cap.classList.remove('on'); };
+document.getElementById('cinemaExit').onclick = function(){ document.body.classList.remove('cinema'); run = null; banner.className = ''; cap.classList.remove('on'); requestAnimationFrame(fitCanvas); };
 if (location.hash === '#demo') { document.getElementById('sandbox').scrollIntoView(); setParams(2.0, 10, 1.05); startRun(true); }
 if (location.hash === '#cinema') enterCinema();
+window.addEventListener('resize', function(){ fitCanvas(); });
+fitCanvas();
+window.addEventListener('keydown', function(ev){
+  if (!document.body.classList.contains('cinema')) return;
+  const k = ev.key.toLowerCase();
+  if (k === 'c') { capOn = !capOn; cap.classList.toggle('on', capOn); if (!capOn) cap.textContent = ''; }
+  else if (k === 'h') { hudOn = !hudOn; }
+  else if (k === 's') { demoScale = demoScale === 0.62 ? 0.32 : 0.62; if (run && run.demo) run.scale = demoScale; }
+  else if (k === 'r') { startRecording(13); }
+});
+function startRecording(secs){
+  if (window.__rec) return;
+  const mimes = ['video/webm;codecs=vp9', 'video/webm;codecs=vp8', 'video/webm'];
+  const mime = mimes.find(function(m){ return window.MediaRecorder && MediaRecorder.isTypeSupported(m); });
+  if (!mime) { banner.className = 'fail'; banner.textContent = '\u6D4F\u89C8\u5668\u4E0D\u652F\u6301\u5F55\u5236'; return; }
+  const rec = new MediaRecorder(cv.captureStream(60), { mimeType: mime, videoBitsPerSecond: 12000000 });
+  const chunks = [];
+  rec.ondataavailable = function(e){ if (e.data.size) chunks.push(e.data); };
+  rec.onstop = function(){
+    window.__rec = null;
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob(chunks, { type: 'video/webm' }));
+    a.download = 'icf-demo-' + secs + 's.webm';
+    document.body.appendChild(a); a.click();
+    banner.className = 'ok'; banner.textContent = '\u5F55\u5236\u5B8C\u6210 \u00B7 \u5DF2\u4FDD\u5B58 webm';
+    setTimeout(function(){ banner.className = ''; }, 2500);
+  };
+  window.__rec = rec;
+  rec.start();
+  banner.className = 'ok'; banner.textContent = '\u25CF \u5F55\u5236\u4E2D ' + secs + 's \u00B7 \u7ED3\u675F\u540E\u81EA\u52A8\u4E0B\u8F7D';
+  setTimeout(function(){ rec.stop(); }, secs * 1000);
+}
 requestAnimationFrame(draw);
 </script>
 </body>

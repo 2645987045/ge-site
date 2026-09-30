@@ -1,9 +1,0 @@
-node_modules/
-qa/
-*.tar.gz
-dom.txt
-shot-*.png
-HANDOFF.md
-server-init-personal.ps1
-probe.ps1
-deploy.sh
