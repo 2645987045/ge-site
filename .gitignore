@@ -7,3 +7,4 @@ HANDOFF.md
 server-init-personal.ps1
 probe.ps1
 deploy.sh
+tools/
