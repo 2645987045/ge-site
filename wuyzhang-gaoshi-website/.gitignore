@@ -1,8 +1,7 @@
 # Dependencies
 node_modules/
 
-# Build output
-dist/
+# Build output: dist is committed on purpose (server auto-sync pulls it from this repo)
 
 # Logs
 logs
