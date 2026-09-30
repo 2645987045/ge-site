@@ -1,0 +1,115 @@
+{
+  "photos": [
+    {
+      "id": 1,
+      "src": "/images/behind/photo1.jpg?v=20260831",
+      "caption": "舞台群像"
+    },
+    {
+      "id": 2,
+      "src": "/images/behind/photo2.jpg?v=20260831",
+      "caption": "双人对手戏"
+    },
+    {
+      "id": 3,
+      "src": "/images/behind/photo3.jpg?v=20260831",
+      "caption": "主角对峙"
+    },
+    {
+      "id": 4,
+      "src": "/images/behind/photo4.jpg?v=20260831",
+      "caption": "慷慨陈词"
+    },
+    {
+      "id": 5,
+      "src": "/images/behind/photo5.jpg?v=20260831",
+      "caption": "席地谈心"
+    },
+    {
+      "id": 6,
+      "src": "/images/behind/photo6.jpg?v=20260831",
+      "caption": "探讨剧本"
+    },
+    {
+      "id": 7,
+      "src": "/images/behind/photo7.jpg?v=20260831",
+      "caption": "集体排练"
+    },
+    {
+      "id": 8,
+      "src": "/images/behind/photo8.jpg?v=20260831",
+      "caption": "动情独白"
+    },
+    {
+      "id": 9,
+      "src": "/images/behind/photo9.jpg?v=20260831",
+      "caption": "井边生活"
+    },
+    {
+      "id": 10,
+      "src": "/images/behind/photo10.jpg?v=20260831",
+      "caption": "生活特写"
+    },
+    {
+      "id": 11,
+      "src": "/images/behind/photo11.jpg?v=20260831",
+      "caption": "挑担启程"
+    },
+    {
+      "id": 12,
+      "src": "/images/behind/photo12.jpg?v=20260831",
+      "caption": "紧张对峙"
+    },
+    {
+      "id": 13,
+      "src": "/images/behind/photo13.jpg?v=20260831",
+      "caption": "家中群戏"
+    },
+    {
+      "id": 14,
+      "src": "/images/behind/photo14.jpg?v=20260831",
+      "caption": "长凳对谈"
+    },
+    {
+      "id": 15,
+      "src": "/images/behind/photo15.jpg?v=20260831",
+      "caption": "众生百态"
+    },
+    {
+      "id": 16,
+      "src": "/images/behind/photo16.jpg?v=20260831",
+      "caption": "静夜倾谈"
+    },
+    {
+      "id": 17,
+      "src": "/images/behind/photo17.jpg?v=20260831",
+      "caption": "天下为公"
+    },
+    {
+      "id": 18,
+      "src": "/images/behind/photo18.jpg?v=20260831",
+      "caption": "历史握手"
+    },
+    {
+      "id": 19,
+      "src": "/images/behind/photo19.jpg?v=20260831",
+      "caption": "集会场景"
+    }
+  ],
+  "stories": [
+    {
+      "id": 1,
+      "title": "创作历程",
+      "author": "导演组",
+      "date": "2025-05-01",
+      "content": "<p>《吴玉章在高师》的创作历时半年，从剧本创作到最终排演，凝聚了全体主创人员的心血。</p><p>我们深入研究了吴玉章先生的生平事迹，力求在舞台上真实再现那段历史。</p>"
+    },
+    {
+      "id": 2,
+      "title": "演员心声",
+      "author": "主演",
+      "date": "2025-05-10",
+      "content": "<p>饰演吴玉章先生是一次难得的经历。为了塑造好这个角色，我阅读了大量历史资料，努力理解那个时代知识分子的精神世界。</p>"
+    }
+  ]
+}

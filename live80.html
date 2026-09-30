@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>吴玉章在高师 · 话剧官方网站</title>
+  <meta name="description" content="《吴玉章在高师》话剧官方网站 —— 四川大学吴玉章学院出品。再现吴玉章先生在成都高等师范学校任教时期的教育家与革命家岁月。">
+  <script type="module" crossorigin src="./assets/main-BByiJ0mV.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/main-Bw_99Llk.js">
+  <link rel="stylesheet" crossorigin href="./assets/main-CF2BMCFj.css">
+  <link rel="stylesheet" crossorigin href="./assets/main-CLv7pxWZ.css">
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="./index.html" class="nav-logo" aria-label="吴玉章在高师 首页">
+        <span class="logo-seal" aria-hidden="true"></span>
+        <span class="logo-text">吴玉章在高师</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="./index.html" class="nav-link active">首页</a></li>
+        <li><a href="./videos.html" class="nav-link">影像</a></li>
+        <li><a href="./characters.html" class="nav-link">角色</a></li>
+        <li><a href="./behind.html" class="nav-link">幕后</a></li>
+        <li><a href="./about.html" class="nav-link">关于</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="打开菜单"><span class="hamburger"></span></button>
+    </div>
+  </nav>
+
+  <!-- 英雄区：舞台光幕 -->
+  <header class="hero">
+    <div class="hero-media" aria-hidden="true">
+      <video id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="./images/posters/promo-poster.jpg">
+        <source src="/videos/promo.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero-light" aria-hidden="true"></div>
+    <div class="hero-grain" aria-hidden="true"></div>
+    <div class="hero-side" aria-hidden="true">成都高等师范学校</div>
+
+    <div class="hero-content">
+      <div class="container">
+        <p class="hero-kicker">四川大学吴玉章学院 出品</p>
+        <h1 class="hero-title">吴玉章在高师</h1>
+        <p class="hero-subtitle">一部严肃庄重的舞台正剧，再现著名教育家、革命家吴玉章先生在成都高等师范学校任教时期的光辉岁月。</p>
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">演出时间</span>
+            <span class="hero-meta-value">2025.05.16 / 05.18 · 2026.09.28 · 19:00</span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">演出地点</span>
+            <span class="hero-meta-value">江安校区 艺术学院教学实验剧场</span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">主办</span>
+            <span class="hero-meta-value">四川大学</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">SCROLL</div>
+  </header>
+
+  <!-- 宣传片 -->
+  <section class="promo">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="kicker">PROMO FILM · 宣传片</span>
+        <h2 class="section-title">宣传片</h2>
+      </div>
+      <div class="promo-stage reveal" id="promoStage">
+        <!-- 真实视频 / 动态海报宣传片 由脚本注入 -->
+      </div>
+      <p class="promo-note" id="promoNote"></p>
+    </div>
+  </section>
+  <!-- 演出信息 -->
+  <section class="schedule band-light">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="kicker">SCHEDULE · 演出信息</span>
+        <h2 class="section-title">演出信息</h2>
+      </div>
+      <div class="schedule-grid">
+        <div class="show-list reveal">
+          <div class="show-row">
+            <div class="show-date">05.16<small>2025 · 周五 · 首演场</small></div>
+            <div class="show-detail">
+              <p>19:00 · 江安校区 艺术学院教学实验剧场</p>
+              <p>主办单位：四川大学 · 承办单位：教务处、党委学生工作部（处）、吴玉章学院</p>
+            </div>
+            <span class="tag">已演出</span>
+          </div>
+          <div class="show-row">
+            <div class="show-date">05.18<small>2025 · 周日 · 第二场</small></div>
+            <div class="show-detail">
+              <p>19:00 · 江安校区 艺术学院教学实验剧场</p>
+              <p>主办单位：四川大学 · 承办单位：教务处、党委学生工作部（处）、吴玉章学院</p>
+            </div>
+            <span class="tag">已演出</span>
+          </div>
+          <div class="show-row">
+            <div class="show-date">09.28<small>2026 · 周一 · 第三场</small></div>
+            <div class="show-detail">
+              <p>19:00 · 江安校区 艺术学院教学实验剧场</p>
+              <p>主办单位：四川大学 · 承办单位：教务处、党委学生工作部（处）、吴玉章学院</p>
+            </div>
+            <span class="tag tag-upcoming">待演出</span>
+          </div>
+        </div>
+        <aside class="status-card reveal" id="statusCard">
+          <span class="kicker">COUNTDOWN · 倒计时</span>
+          <div class="countdown">
+            <div class="countdown-item"><span class="countdown-number" id="cdDays">00</span><span class="countdown-label">天</span></div>
+            <div class="countdown-item"><span class="countdown-number" id="cdHours">00</span><span class="countdown-label">时</span></div>
+            <div class="countdown-item"><span class="countdown-number" id="cdMinutes">00</span><span class="countdown-label">分</span></div>
+            <div class="countdown-item"><span class="countdown-number" id="cdSeconds">00</span><span class="countdown-label">秒</span></div>
+          </div>
+          <div class="status-done">
+            <p>本轮演出已圆满落幕，<br>愿舞台的记忆常驻心间。</p>
+            <a class="btn btn-ghost" href="./videos.html">观看演出影像</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 剧目简介 -->
+  <section class="intro">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-copy reveal">
+          <div class="section-head">
+            <span class="kicker">ABOUT THE PLAY · 剧目</span>
+            <h2 class="section-title">话剧简介</h2>
+          </div>
+          <p class="lead">《吴玉章在高师》是四川大学吴玉章学院出品的舞台正剧。剧作以 1922 至 1924 年吴玉章先生出任国立成都高等师范学校校长为背景，围绕“崇尚学术、启用新派”的办学思想，讲述他整顿校风、维护校誉、爱生如子、以校为家，在高师点燃新思想与革命火种的岁月。</p>
+          <p>全剧以吴玉章学院学子海川的意外穿越为视角，将百年后的校史馆与 1922 年的成都高师相连，在新旧思想的碰撞与师生命运的交织中，再现一位师者以教育唤醒民族、以行动书写信仰的激情岁月。</p>
+          <div class="intro-actions">
+            <a class="btn btn-solid" href="./characters.html">认识角色</a>
+            <a class="btn btn-ghost" href="./about.html">了解创作背景</a>
+          </div>
+        </div>
+        <div class="poster reveal" id="mainPoster">
+          <div class="poster-inner" aria-hidden="true">
+            <span class="poster-sub">四川大学吴玉章学院 出品</span>
+            <span class="poster-title">吴玉章在高师</span>
+          </div>
+          <span class="poster-seal" aria-hidden="true">话剧</span>
+          <img src="./images/posters/main-poster.jpg" alt="《吴玉章在高师》话剧海报" data-poster>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 引言 -->
+  <section class="quote-band">
+    <div class="container reveal">
+      <p class="quote-text">民为贵，社稷次之，君为轻。我在高师也一样，学生为贵，学校次之，校长为轻。</p>
+      <p class="quote-cite">—— 吴玉章 · 剧中台词</p>
+      <p class="quote-text">有一个人，以教育为火种，点燃一个时代。</p>
+      <p class="quote-cite">—— 讲述者 · 序幕</p>
+    </div>
+  </section>
+
+  <!-- 探索更多 -->
+  <!-- 公演回顾 · 媒体报道 -->
+  <section class="press band-light">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="kicker">PRESS · 公演回顾</span>
+        <h2 class="section-title">公演回顾</h2>
+      </div>
+
+      <a class="press-feature reveal" href="https://mp.weixin.qq.com/s/8y97crga8oi55CxQNod-3g" target="_blank" rel="noopener">
+        <div class="press-feature-img">
+          <img src="./images/press/press-stage.jpg" alt="《吴玉章在高师》首场公演谢幕现场" loading="lazy">
+        </div>
+        <div class="press-feature-body">
+          <span class="press-source">四川大学e教务 公众号 · 2025.05.20</span>
+          <h3>首场公演！这场“沉浸式”大课，触动人心！</h3>
+          <p>5月16日，四川大学吴玉章学院组织策划、在校学生主演的原创舞台剧《吴玉章在高师》在江安校区艺术学院教学实验剧场进行首场公演。副校长、吴玉章学院院长游劲松和校党委副书记刘晓虎，学校相关单位负责人，兄弟院校荣誉学院以及全校师生代表观看了演出。</p>
+          <p>全剧以八幕剧情串联起吴玉章先生整顿校风、引进新学、推动中西学术交融等教育改革实践，将美育教育与思政教育深度融合，为师生呈现一堂跨越时空的“思政大课”。</p>
+          <span class="press-link">阅读原文 →</span>
+        </div>
+      </a>
+
+      <div class="press-gallery reveal">
+        <figure>
+          <img src="./images/press/press-curtain.jpg" alt="全体演员举手谢幕" loading="lazy">
+          <figcaption>演出落幕 · 全体演员谢幕</figcaption>
+        </figure>
+        <figure>
+          <img src="./images/press/press-group.jpg" alt="演职人员演出后合影" loading="lazy">
+          <figcaption>演职人员合影</figcaption>
+        </figure>
+        <figure>
+          <img src="./images/press/press-rehearsal.jpg" alt="排练现场剧本围读" loading="lazy">
+          <figcaption>创作进行时 · 剧本围读</figcaption>
+        </figure>
+      </div>
+
+      <div class="press-quotes">
+        <blockquote class="press-quote reveal">
+          <p>这台剧不是简单的模仿，而是让文物走出展柜，让精神直抵人心。</p>
+          <cite>吕远红 · 吴玉章陈列馆馆长</cite>
+        </blockquote>
+        <blockquote class="press-quote reveal">
+          <p>深入角色后，方知变革的复杂性，更敬佩教育革命家吴玉章先生“破与立”的智慧。</p>
+          <cite>韩嘉祥 · 饰 吴玉章</cite>
+        </blockquote>
+        <blockquote class="press-quote reveal">
+          <p>吴玉章先生不拘一格选拔人才、倡导“学术自由”的高瞻远瞩，让我真切体会到吴院今日“一式三制三化”培养模式的深远意义。</p>
+          <cite>韩嘉仪 · 饰 海川 · 2023届吴院学子</cite>
+        </blockquote>
+        <blockquote class="press-quote reveal">
+          <p>《哭吾妻丙莲》一幕中，吴先生对妻子的深情独白让我潸然泪下，让我看到革命者“舍小家、为大家”的崇高情怀。</p>
+          <cite>姚释堃 · 2023级工程力学（拔尖计划）</cite>
+        </blockquote>
+      </div>
+
+      <p class="press-note reveal">以上内容摘编自“四川大学e教务”公众号 2025 年 5 月 20 日文章《首场公演！这场“沉浸式”大课，触动人心！》，图片来自原文。</p>
+    </div>
+  </section>
+
+  <!-- 探索更多 -->
+  <section class="explore">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="kicker">EXPLORE · 探索更多</span>
+        <h2 class="section-title">走进这部剧</h2>
+      </div>
+      <div class="explore-grid">
+        <a href="./videos.html" class="explore-card reveal">
+          <span class="explore-index">01</span>
+          <h3>影像</h3>
+          <p>宣传片、预告片与幕后影像记录。</p>
+          <span class="explore-arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="./characters.html" class="explore-card reveal">
+          <span class="explore-index">02</span>
+          <h3>角色</h3>
+          <p>角色档案、饰演者与历史原型。</p>
+          <span class="explore-arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="./behind.html" class="explore-card reveal">
+          <span class="explore-index">03</span>
+          <h3>幕后</h3>
+          <p>排练瞬间、幕后故事与创作手记。</p>
+          <span class="explore-arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="./about.html" class="explore-card reveal">
+          <span class="explore-index">04</span>
+          <h3>关于</h3>
+          <p>剧目简介、吴玉章生平与创作背景。</p>
+          <span class="explore-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <h3>吴玉章在高师</h3>
+          <p>四川大学吴玉章学院出品话剧</p>
+        </div>
+        <div class="footer-col">
+          <h4>导航</h4>
+          <div class="footer-links">
+            <a href="./videos.html">影像</a>
+            <a href="./characters.html">角色档案</a>
+            <a href="./behind.html">幕后花絮</a>
+            <a href="./about.html">关于我们</a>
+          </div>
+        </div>
+        <div class="footer-col footer-contact">
+          <h4>主办承办</h4>
+          <p>主办单位：四川大学</p>
+          <p>承办单位：教务处 · 党委学生工作部（处） · 吴玉章学院</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 四川大学吴玉章学院 · All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
