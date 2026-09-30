@@ -27,8 +27,15 @@ const closeLightbox = () => {
   document.body.style.overflow = '';
 };
 
-if (galleryGrid) {
-  behind.photos.forEach((photo) => {
+const EDITIONS = [
+  { key: 'all', label: '全部' },
+  { key: '2026', label: '2026-09-28 · 第三场' },
+  { key: '2025', label: '2025 · 前两场' },
+];
+
+const renderGallery = (list) => {
+  galleryGrid.innerHTML = '';
+  list.forEach((photo) => {
     const figure = document.createElement('figure');
     figure.className = 'gallery-item';
     figure.tabIndex = 0;
@@ -54,6 +61,25 @@ if (galleryGrid) {
     });
     galleryGrid.append(figure);
   });
+};
+
+if (galleryGrid) {
+  const tabs = document.createElement('div');
+  tabs.className = 'gallery-tabs';
+  EDITIONS.forEach((ed, i) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'gal-tab' + (i === 0 ? ' active' : '');
+    btn.textContent = ed.label;
+    btn.addEventListener('click', () => {
+      tabs.querySelectorAll('.gal-tab').forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderGallery(ed.key === 'all' ? behind.photos : behind.photos.filter((p) => (p.edition || '2025') === ed.key));
+    });
+    tabs.append(btn);
+  });
+  galleryGrid.parentElement.insertBefore(tabs, galleryGrid);
+  renderGallery(behind.photos);
 }
 
 if (storiesList) {

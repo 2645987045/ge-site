@@ -193,3 +193,8 @@
   .gallery-grid { grid-template-columns: 1fr; }
   .gallery-item:nth-child(4n + 1) { grid-column: auto; }
 }
+
+.gallery-tabs { display: flex; gap: 10px; flex-wrap: wrap; margin: 0 0 22px; }
+.gal-tab { padding: 8px 18px; border-radius: 999px; border: 1px solid rgba(60,40,30,.25); background: transparent; font-size: 13px; letter-spacing: 1px; cursor: pointer; color: #3b2a22; transition: .2s; }
+.gal-tab:hover { border-color: #b02e26; color: #b02e26; }
+.gal-tab.active { background: #b02e26; color: #fff8ee; border-color: transparent; }
