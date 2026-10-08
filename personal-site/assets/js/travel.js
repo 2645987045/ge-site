@@ -31,7 +31,7 @@
     image.hidden = false;
     image.alt = photo.alt || photo.caption || activeAlbum.title || '旅行照片';
     image.src = photo.src;
-    document.getElementById('travel-photo-title').textContent = photo.title || activeAlbum.title || '旅行相册';
+    document.getElementById('travel-photo-title').textContent = photo.title || `照片 ${String(photoIndex + 1).padStart(2, '0')}`;
     document.getElementById('travel-photo-meta').textContent = [activeAlbum.location, activeAlbum.date].filter(Boolean).join(' · ');
     document.getElementById('travel-photo-caption').textContent = photo.caption || activeAlbum.note || '';
     document.getElementById('travel-photo-count').textContent = `${photoIndex + 1} / ${activeAlbum.photos.length}`;
@@ -66,7 +66,10 @@
       button.append(thumbnail, element('span', '', `${album.photos.length} 张 · 查看相册 ↗`));
       button.addEventListener('click', () => openAlbum(album, button));
       const copy = element('div', 'travel-copy');
-      copy.append(element('h3', '', album.title || '旅行相册'), element('p', 'travel-location', [album.category, album.location].filter(Boolean).join(' · ')), element('p', 'travel-note', album.note || ''));
+      copy.append(element('h3', '', album.title || album.location || '旅行相册'));
+      if (album.title && album.location) copy.append(element('p', 'travel-location', [album.category, album.location].filter(Boolean).join(' · ')));
+      else if (album.category) copy.append(element('p', 'travel-location', album.category));
+      copy.append(element('p', 'travel-note', album.note || ''));
       row.append(button, copy);
       const gallery = element('div', 'travel-album-photos');
       gallery.setAttribute('aria-label', `${album.title || '旅行'}的照片`);
@@ -82,7 +85,7 @@
         preview.decoding = 'async';
         photoButton.append(preview);
         photoButton.addEventListener('click', () => openAlbum(album, photoButton, index));
-        figure.append(photoButton, element('figcaption', 'travel-photo-label', `${String(index + 1).padStart(2, '0')} · ${photo.title || '旅行瞬间'}`));
+        figure.append(photoButton, element('figcaption', 'travel-photo-label', `${String(index + 1).padStart(2, '0')}${photo.title ? ' · ' + photo.title : ''}`));
         if (photo.caption) figure.append(element('p', 'travel-photo-note', photo.caption));
         gallery.append(figure);
       });
