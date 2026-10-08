@@ -6,7 +6,6 @@
   <title>嗝 · 个人主页</title>
   <meta name="description" content="嗝的个人主页：川大强基物理本科生，痛苦学物理 ing，快乐做作品 ing。科研训练、竞赛、建站与舞台剧经历。">
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/travel.css">
 </head>
 <body>
   <nav class="nav">
@@ -18,7 +17,7 @@
         <a href="#projects">项目</a>
         <a href="#physics">物理</a>
         <a href="#skills">技能</a>
-        <a href="#travel" class="nav-travel">旅行</a>
+        <a href="travel.html" class="nav-travel">旅行</a>
         <a href="#contact" class="nav-cta">联系我</a>
       </div>
     </div>
@@ -244,42 +243,6 @@
     </div>
   </section>
 
-  <section class="travel-section" id="travel" aria-labelledby="travel-title">
-    <div class="wrap">
-      <div class="travel-heading">
-        <span class="travel-eyebrow">TRAVEL JOURNAL / 旅行足迹</span>
-        <h2 id="travel-title">走过的路，记得的风景。</h2>
-        <p>一些远方，一些偶遇。<br>用照片收藏那些舍不得忘记的瞬间。</p>
-      </div>
-      <div class="travel-filters" aria-label="旅行相册分类" hidden></div>
-      <ol class="travel-timeline" aria-label="旅行相册">
-        <li class="travel-entry travel-pending">
-          <span class="travel-date">第一组照片<br><span>待收录</span></span>
-          <div class="travel-placeholder travel-mountains" role="img" aria-label="山野相册占位画面，尚未上传照片"><span>照片待上传</span></div>
-          <div class="travel-copy"><h3>一次山野漫步</h3><p class="travel-location">山野 · 目的地待填写</p><p class="travel-note">留一点位置，给路上的山、湖泊与风。</p></div>
-        </li>
-        <li class="travel-entry travel-pending">
-          <span class="travel-date">下一段旅程<br><span>待收录</span></span>
-          <div class="travel-placeholder travel-sea" role="img" aria-label="海边相册占位画面，尚未上传照片"><span>照片待上传</span></div>
-          <div class="travel-copy"><h3>等一场海边日落</h3><p class="travel-location">海边 · 目的地待填写</p><p class="travel-note">收藏海浪的声音，也收藏天色慢慢变暗的瞬间。</p></div>
-        </li>
-        <li class="travel-entry travel-pending">
-          <span class="travel-date">未完待续<br><span>待收录</span></span>
-          <div class="travel-placeholder travel-city" role="img" aria-label="城市相册占位画面，尚未上传照片"><span>照片待上传</span></div>
-          <div class="travel-copy"><h3>城市里的小发现</h3><p class="travel-location">城市 · 目的地待填写</p><p class="travel-note">拐进一条小街，把陌生城市的一点日常带回来。</p></div>
-        </li>
-      </ol>
-      <div class="travel-footer"><span id="travel-status">相册筹备中 · 以上为占位设计，真实旅行照片即将收录</span><span>下一站，未完待续 ↗</span></div>
-    </div>
-    <!-- 填写真实旅行后，每项包含 title/date/location/category/note/photos；photos 包含 src/alt/caption。 -->
-    <script type="application/json" id="travel-data">[]</script>
-    <dialog class="travel-lightbox" id="travel-lightbox" aria-labelledby="travel-photo-title">
-      <button class="travel-close" type="button" aria-label="关闭照片">×</button>
-      <div class="travel-lightbox-frame"><img id="travel-photo" alt=""><p id="travel-photo-error" hidden>照片暂时无法显示</p></div>
-      <div class="travel-lightbox-info"><h3 id="travel-photo-title"></h3><p id="travel-photo-meta"></p><p id="travel-photo-caption"></p></div>
-      <div class="travel-lightbox-controls"><button type="button" id="travel-previous" aria-label="上一张照片">← 上一张</button><span id="travel-photo-count" aria-live="polite"></span><button type="button" id="travel-next" aria-label="下一张照片">下一张 →</button></div>
-    </dialog>
-  </section>
 
   <section class="band contact" id="contact">
     <div class="wrap">
@@ -301,6 +264,5 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/travel.js"></script>
 </body>
 </html>
