@@ -31,7 +31,7 @@
     image.hidden = false;
     image.alt = photo.alt || photo.caption || activeAlbum.title || '旅行照片';
     image.src = photo.src;
-    document.getElementById('travel-photo-title').textContent = activeAlbum.title || '旅行相册';
+    document.getElementById('travel-photo-title').textContent = photo.title || activeAlbum.title || '旅行相册';
     document.getElementById('travel-photo-meta').textContent = [activeAlbum.location, activeAlbum.date].filter(Boolean).join(' · ');
     document.getElementById('travel-photo-caption').textContent = photo.caption || activeAlbum.note || '';
     document.getElementById('travel-photo-count').textContent = `${photoIndex + 1} / ${activeAlbum.photos.length}`;
@@ -42,9 +42,9 @@
     photoIndex = (photoIndex + step + activeAlbum.photos.length) % activeAlbum.photos.length;
     showPhoto();
   }
-  function openAlbum(album, button) {
+  function openAlbum(album, button, index = 0) {
     activeAlbum = album;
-    photoIndex = 0;
+    photoIndex = index;
     trigger = button;
     showPhoto();
     dialog.showModal();
@@ -59,7 +59,7 @@
       button.type = 'button';
       button.setAttribute('aria-label', `查看${album.title || '旅行'}相册，共 ${album.photos.length} 张照片`);
       const thumbnail = element('img');
-      thumbnail.src = album.photos[0].src;
+      thumbnail.src = album.photos[0].thumbnail || album.photos[0].src;
       thumbnail.alt = album.photos[0].alt || album.title || '旅行照片';
       thumbnail.loading = 'lazy';
       thumbnail.decoding = 'async';
@@ -68,6 +68,25 @@
       const copy = element('div', 'travel-copy');
       copy.append(element('h3', '', album.title || '旅行相册'), element('p', 'travel-location', [album.category, album.location].filter(Boolean).join(' · ')), element('p', 'travel-note', album.note || ''));
       row.append(button, copy);
+      const gallery = element('div', 'travel-album-photos');
+      gallery.setAttribute('aria-label', `${album.title || '旅行'}的照片`);
+      album.photos.forEach((photo, index) => {
+        const figure = element('figure', 'travel-photo-card');
+        const photoButton = element('button', 'travel-thumb');
+        photoButton.type = 'button';
+        photoButton.setAttribute('aria-label', `打开第 ${index + 1} 张照片：${photo.title || photo.alt || '旅行照片'}`);
+        const preview = element('img');
+        preview.src = photo.thumbnail || photo.src;
+        preview.alt = photo.alt || photo.title || '旅行照片';
+        preview.loading = 'lazy';
+        preview.decoding = 'async';
+        photoButton.append(preview);
+        photoButton.addEventListener('click', () => openAlbum(album, photoButton, index));
+        figure.append(photoButton, element('figcaption', 'travel-photo-label', `${String(index + 1).padStart(2, '0')} · ${photo.title || '旅行瞬间'}`));
+        if (photo.caption) figure.append(element('p', 'travel-photo-note', photo.caption));
+        gallery.append(figure);
+      });
+      row.append(gallery);
       list.append(row);
     });
     filters.querySelectorAll('button').forEach(button => button.setAttribute('aria-pressed', String(button.textContent === category)));

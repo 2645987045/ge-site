@@ -28,27 +28,87 @@
         <p>一些远方，一些偶遇。<br>用照片收藏那些舍不得忘记的瞬间。</p>
       </div>
       <div class="travel-filters" aria-label="旅行相册分类" hidden></div>
-      <ol class="travel-timeline" aria-label="旅行相册">
-        <li class="travel-entry travel-pending">
-          <span class="travel-date">第一组照片<br><span>待收录</span></span>
-          <div class="travel-placeholder travel-mountains" role="img" aria-label="山野相册占位画面，尚未上传照片"><span>照片待上传</span></div>
-          <div class="travel-copy"><h3>一次山野漫步</h3><p class="travel-location">山野 · 目的地待填写</p><p class="travel-note">留一点位置，给路上的山、湖泊与风。</p></div>
-        </li>
-        <li class="travel-entry travel-pending">
-          <span class="travel-date">下一段旅程<br><span>待收录</span></span>
-          <div class="travel-placeholder travel-sea" role="img" aria-label="海边相册占位画面，尚未上传照片"><span>照片待上传</span></div>
-          <div class="travel-copy"><h3>等一场海边日落</h3><p class="travel-location">海边 · 目的地待填写</p><p class="travel-note">收藏海浪的声音，也收藏天色慢慢变暗的瞬间。</p></div>
-        </li>
-        <li class="travel-entry travel-pending">
-          <span class="travel-date">未完待续<br><span>待收录</span></span>
-          <div class="travel-placeholder travel-city" role="img" aria-label="城市相册占位画面，尚未上传照片"><span>照片待上传</span></div>
-          <div class="travel-copy"><h3>城市里的小发现</h3><p class="travel-location">城市 · 目的地待填写</p><p class="travel-note">拐进一条小街，把陌生城市的一点日常带回来。</p></div>
-        </li>
-      </ol>
-      <div class="travel-footer"><span id="travel-status">相册筹备中 · 以上为占位设计，真实旅行照片即将收录</span><span>下一站，未完待续 ↗</span></div>
+      <ol class="travel-timeline" aria-label="旅行相册"></ol>
+      <div class="travel-footer"><span id="travel-status">昆明与攀枝花 · 8 张照片</span><span>下一站，未完待续 ↗</span></div>
     </div>
     <!-- 填写真实旅行后，每项包含 title/date/location/category/note/photos；photos 包含 src/alt/caption。 -->
-    <script type="application/json" id="travel-data">[]</script>
+    <script type="application/json" id="travel-data">
+[
+  {
+    "title": "昆明与攀枝花 · 十月片段",
+    "date": "2026.10.04 — 10.06",
+    "location": "云南昆明 · 四川攀枝花",
+    "category": "",
+    "note": "",
+    "photos": [
+      {
+        "id": "DSC06671",
+        "title": "湖畔亭台",
+        "src": "assets/img/travel/2026-kunming-panzhihua/dsc06671.jpg",
+        "thumbnail": "assets/img/travel/2026-kunming-panzhihua/dsc06671-thumb.jpg",
+        "alt": "临水的亭台、绿瓦屋顶与湖面",
+        "caption": ""
+      },
+      {
+        "id": "DSC06703",
+        "title": "树下留影",
+        "src": "assets/img/travel/2026-kunming-panzhihua/dsc06703.jpg",
+        "thumbnail": "assets/img/travel/2026-kunming-panzhihua/dsc06703-thumb.jpg",
+        "alt": "树荫下、湖边的人物留影",
+        "caption": ""
+      },
+      {
+        "id": "DSC06731",
+        "title": "松鼠觅食",
+        "src": "assets/img/travel/2026-kunming-panzhihua/dsc06731.jpg",
+        "thumbnail": "assets/img/travel/2026-kunming-panzhihua/dsc06731-thumb.jpg",
+        "alt": "树杈上正在进食的松鼠",
+        "caption": ""
+      },
+      {
+        "id": "DSC06764",
+        "title": "树影与湖面",
+        "src": "assets/img/travel/2026-kunming-panzhihua/dsc06764.jpg",
+        "thumbnail": "assets/img/travel/2026-kunming-panzhihua/dsc06764-thumb.jpg",
+        "alt": "枝叶间的湖面与傍晚光线",
+        "caption": ""
+      },
+      {
+        "id": "DSC06794",
+        "title": "湖上花束",
+        "src": "assets/img/travel/2026-kunming-panzhihua/dsc06794.jpg",
+        "thumbnail": "assets/img/travel/2026-kunming-panzhihua/dsc06794-thumb.jpg",
+        "alt": "湖上船边抱着蓝色花束的人物",
+        "caption": ""
+      },
+      {
+        "id": "DSC06818",
+        "title": "红色缆车",
+        "src": "assets/img/travel/2026-kunming-panzhihua/dsc06818.jpg",
+        "thumbnail": "assets/img/travel/2026-kunming-panzhihua/dsc06818-thumb.jpg",
+        "alt": "绿树之间的红色与绿色缆车",
+        "caption": ""
+      },
+      {
+        "id": "DSC06858",
+        "title": "山坡与楼群",
+        "src": "assets/img/travel/2026-kunming-panzhihua/dsc06858.jpg",
+        "thumbnail": "assets/img/travel/2026-kunming-panzhihua/dsc06858-thumb.jpg",
+        "alt": "绿色山坡之间的城市楼群",
+        "caption": ""
+      },
+      {
+        "id": "DSC06874",
+        "title": "水豚游泳",
+        "src": "assets/img/travel/2026-kunming-panzhihua/dsc06874.jpg",
+        "thumbnail": "assets/img/travel/2026-kunming-panzhihua/dsc06874-thumb.jpg",
+        "alt": "游泳的水豚与水中的小鱼",
+        "caption": ""
+      }
+    ]
+  }
+]
+    </script>
     <dialog class="travel-lightbox" id="travel-lightbox" aria-labelledby="travel-photo-title">
       <button class="travel-close" type="button" aria-label="关闭照片">×</button>
       <div class="travel-lightbox-frame"><img id="travel-photo" alt=""><p id="travel-photo-error" hidden>照片暂时无法显示</p></div>
